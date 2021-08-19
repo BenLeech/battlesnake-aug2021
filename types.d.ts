@@ -35,6 +35,14 @@ export interface Coordinates {
     y: number
 }
 
+export interface GridNode {
+    position: Coordinates;
+    f: number;
+    g: number;
+    h: number;
+    parent: GridNode | null;
+}
+
 export interface Snake {
     /**
      * Unique identifier for this Battlesnake in the context of the current Game.
@@ -184,7 +192,7 @@ export interface GameState {
     /**
      * Battlesnake Object describing your Battlesnake.
      */
-    you: Battlesnake
+    you: Snake
 }
 
 export type Direction = 'up' | 'left' | 'down' | 'right'
